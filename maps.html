@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TerraIntel AI Map View</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>TerraIntel AI</h1>
+<p>Land Location View</p>
+</header>
+
+<section>
+
+<h2>Selected Location</h2>
+
+<div id="mapContainer"></div>
+
+<br>
+
+<a href="report.html">
+<button>Generate Report</button>
+</a>
+
+</section>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const lat = params.get("lat");
+const lng = params.get("lng");
+
+document.getElementById("mapContainer").innerHTML = `
+<iframe
+width="100%"
+height="500"
+src="https://maps.google.com/maps?q=${lat},${lng}&z=16&output=embed">
+</iframe>
+`;
+
+</script>
+
+</body>
+</html>
